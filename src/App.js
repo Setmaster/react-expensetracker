@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
 const App = () => {
     const expenses = [
@@ -13,7 +14,8 @@ const App = () => {
         {
             id: 'e2', title: 'New TV',
             amount: 799.49,
-            date: new Date(2021, 2, 12)},
+            date: new Date(2021, 2, 12)
+        },
         {
             id: 'e3',
             title: 'Car Insurance',
@@ -27,15 +29,11 @@ const App = () => {
             date: new Date(2021, 5, 12),
         },
     ];
-    console.log('expenses:', expenses[0]);
+
     return (
-        <div>
-            <h2>Let's get started!</h2>
-            <ExpenseItem data={expenses[0]}/>
-            <ExpenseItem data={expenses[1]}/>
-            <ExpenseItem data={expenses[2]}/>
-            <ExpenseItem data={expenses[3]}/>
-        </div>
+        <Expenses
+        expenses={expenses}
+        />
     );
 }
 

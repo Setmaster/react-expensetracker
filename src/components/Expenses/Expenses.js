@@ -13,7 +13,7 @@ const Expenses = (props) => {
         setFilteredYear(event.target.value);
     };
     const getFilteredExpenses = () => {
-        if(filteredYear === 'All'){
+        if (filteredYear === 'All') {
             return items;
         }
         return items.filter(
@@ -29,8 +29,8 @@ const Expenses = (props) => {
                     selected={filteredYear}
                     onChangeFilter={filterChangeHandler}
                 />
-                {getFilteredExpenses().length === 0 ? (<p>No expenses found</p>) :
-                    (getFilteredExpenses().map(expense => {
+                {getFilteredExpenses().length === 0 && (<p>No expenses found</p>)}
+                {getFilteredExpenses().length > 0 && (getFilteredExpenses().map(expense => {
                     return (
                         <ExpenseItem
                             key={expense.id}
